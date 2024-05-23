@@ -16,10 +16,9 @@ func main() {
 }
 
 // a channel whose content is boolean
-func worker(done <-chan bool) {
+func worker(done chan bool) {
 	fmt.Print("working ...")
 	time.Sleep(time.Second * 2)
 	fmt.Println("worker: done")
-
 	done <- true
 }
